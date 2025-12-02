@@ -10,6 +10,22 @@
 \usepackage{xltabular}
 \usepackage{graphicx}
 \usepackage{outlines}
+\usepackage[backend=bibtex,style=numeric-comp,sorting=ydnt,maxbibnames=99,defernumbers=true]{biblatex}
+
+% Format bibliography for resume - compact style
+\DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}}
+\setlength{\biblabelsep}{0.5em}
+\defbibenvironment{bibliography}
+  {\list
+     {\printtext[labelnumberwidth]{\printfield{labelprefix}\printfield{labelnumber}}}
+     {\setlength{\labelwidth}{\labelnumberwidth}%
+      \setlength{\leftmargin}{\labelwidth}%
+      \setlength{\labelsep}{\biblabelsep}%
+      \addtolength{\leftmargin}{\labelsep}%
+      \setlength{\itemsep}{0.5ex}%
+      \setlength{\parsep}{\bibparsep}}}
+  {\endlist}
+  {\item}
 
 \setlist[itemize]{leftmargin=*}
 \linespread{1.15}

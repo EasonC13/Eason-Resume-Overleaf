@@ -1,5 +1,7 @@
 \documentclass{resume}
 
+\addbibresource{references.bib}
+
 \begin{document}
 \fontfamily{ppl}\selectfont
 
@@ -187,14 +189,10 @@
 %======================
 % PUBLICATIONS (SHORT)
 %======================
-\csection{Selected Publications}{\small
-    \begin{itemize}
-        \item \footnotesize Chen, E. et al. \textbf{GPTutor: Great Personalized Tutor with Large Language Models for Personalized Learning Content Generation}. Learning@Scale 2024.
-        \item \footnotesize Wu, C.-L., Su, Y.-D., Chen, E. et al. \textbf{Development and Validation of Interactive Creativity Task Platform}. \textit{Frontiers in Psychology}, 2022 (SSCI, Q1).
-        \item \footnotesize Chen, E. et al. \textbf{Buck You: Designing Easy-to-Onboard Blockchain Applications with Zero-Knowledge Login and Sponsored Transactions on Sui}. arXiv:2404.03845, 2024.
-        \item \footnotesize Chen, E. \textbf{Which Factors Predict the Chat Experience of a Natural Language Generation Dialogue Service?} CHI EA 2023, Student Research Competition (2nd place).
-        \item \footnotesize Additional papers in AIED 2022, TAICHI 2021, WWW workshops, POPL workshop, and other venues.
-    \end{itemize}
+\csection{Selected Publications}{
+    \small
+    \nocite{chen2024gptutor,wu2022creativity,chen2024buckyou,chen2023chi,chen2024additional}
+    \printbibliography[heading=none]
 }
 
 %======================
