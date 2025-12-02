@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   build:
@@ -21,8 +18,10 @@ jobs:
         with:
           root_file: resume.tex
 
-      - name: Upload PDF artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: resume
-          path: resume.pdf
+      - name: Commit PDF to repository
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -f resume.pdf
+          git diff --staged --quiet || git commit -m "Build resume.pdf"
+          git push
